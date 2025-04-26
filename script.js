@@ -1,5 +1,5 @@
 // Assumes baseEntries is loaded from keyworddb.js
-const thresholds = [1, 0.98, 0.95, 0.92, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.3];
+const thresholds = [1, 0.98, 0.95, 0.92, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55];
 
 // Cache for chat box, input, and button elements
 const chatBox = document.getElementById('chatBox');
