@@ -78,7 +78,6 @@ const baseEntries = [
   { keyword: 'back again', answer: 'Yes, welcome back!' },
   { keyword: 'hello again assistant', answer: 'Hello again! Ready for round two?' },
   { keyword: 'hey whats up', answer: 'Not much! What’s up with you?' },
-  { keyword: 'hi hi', answer: 'Hi hi! Need something?' },
   { keyword: 'hello hello', answer: 'Hello! Hello! Double greetings!' },
   { keyword: 'hey hey', answer: 'Hey hey! How are you?' },
   { keyword: 'yo there', answer: 'Yo! How can I assist?' },
