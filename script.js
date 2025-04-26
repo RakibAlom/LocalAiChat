@@ -1,4 +1,4 @@
-// Define thresholds for matching percentage (from 100% to 30%)
+// Assumes baseEntries is loaded from keyworddb.js
 const thresholds = [1, 0.98, 0.95, 0.92, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.3];
 
 // Cache for chat box, input, and button elements
@@ -86,8 +86,8 @@ function stopTyping() {
 
 // Generate a smart response based on user input
 function generateSmartResponse(inputText) {
-  const cleanedInput = inputText.toLowerCase().replace(/[^a-z0-9\s]/gi, ''); // Clean input text
-  const inputWords = cleanedInput.split(/\s+/); // Split input into words
+  const cleanedInput = inputText.toLowerCase().replace(/[^a-z0-9\s]/gi, '');
+  const inputWords = cleanedInput.split(/\s+/);
 
   let bestMatch = null;
   let bestScore = 0;
@@ -95,8 +95,8 @@ function generateSmartResponse(inputText) {
 
   // Loop through the thresholds to find the best match
   for (const threshold of thresholds) {
-    for (const key in localDB) {
-      const keyWords = key.toLowerCase().split(/\s+/); // Split keywords into words
+    for (const entry of baseEntries) {
+      const keyWords = entry.keyword.toLowerCase().split(/\s+/); // Split keywords into words
       const allWords = new Set([...inputWords, ...keyWords]); // Combine input and keyword words
       const matchWords = keyWords.filter(word => inputWords.includes(word)); // Find matching words
       const score = matchWords.length / allWords.size; // Calculate match score
@@ -104,17 +104,18 @@ function generateSmartResponse(inputText) {
       if (score >= threshold) {
         // Check if this match is better than the previous best match
         if (score > bestScore || (score === bestScore && keyWords.length > bestLength)) {
-          bestMatch = key;
+          bestMatch = entry.answer;
           bestScore = score;
           bestLength = keyWords.length;
         }
       }
     }
-    if (bestMatch) break; // Exit the loop once the best match is found
+
+    if (bestMatch) break; // Exit the loop once the best match is found at this threshold
   }
 
   // Return the best match response or a default message if no match is found
-  return bestMatch ? localDB[bestMatch] : "Sorry, I don't have an answer for that yet. Feel free to ask me something else!";
+  return bestMatch || "Sorry, I don't have an answer for that yet. Feel free to ask me something else!";
 }
 
 // Load the chat history when the page is loaded
