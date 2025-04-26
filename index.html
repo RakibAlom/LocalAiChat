@@ -7,26 +7,43 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 h-screen flex flex-col justify-center items-center p-4">
-  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg p-6" style="height: 80vh;">
+<body class="bg-gray-100 h-screen flex flex-col items-center p-2 sm:p-4">
+
+  <!-- Main Chat Container -->
+  <div class="w-full max-w-xl bg-white rounded-md shadow-md flex flex-col h-full sm:h-[90vh] p-4 sm:p-6">
+
+    <!-- Header -->
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl font-semibold">Smart AI Chat</h2>
-      <button onclick="clearChat()" class="text-sm bg-red-500 text-white px-3 py-1 rounded-xl hover:bg-red-600">Clear Chat</button>
+      <h2 class="text-xl sm:text-2xl font-semibold text-gray-800">Smart AI Chat</h2>
+      <button onclick="clearChat()" class="text-xs sm:text-sm bg-red-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-red-600 transition-all">Clear Chat</button>
     </div>
-    <!-- Adjusted height of the chat box -->
-    <div id="chatBox" class="overflow-y-auto space-y-4 mb-4" style="height: 63vh;"></div>
-    <div class="flex gap-2">
-      <input id="userInput" type="text" placeholder="Ask something..." class="flex-1 px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" onkeydown="if(event.key==='Enter') handleSubmit()" />
-      <button id="sendBtn" onclick="handleSubmit()" class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Send</button>
-      <button id="stopBtn" onclick="stopTyping()" class="hidden bg-red-600 text-white px-6 py-2 rounded-xl hover:bg-red-700">Stop</button>
+
+    <!-- Chat Messages Container -->
+    <div id="chatBox" class="flex-1 overflow-y-auto space-y-4 bg-white p-3 sm:p-4 rounded-md border border-gray-200">
+      <!-- Chat messages will appear here -->
     </div>
+
+    <!-- Input and Button Section -->
+    <div class="flex gap-2 w-full mt-4">
+      <input id="userInput" type="text" placeholder="Ask something..."
+        class="flex-1 px-3 py-2 sm:px-4 sm:py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base shadow-sm"
+        onkeydown="if(event.key==='Enter') handleSubmit()" />
+      
+      <button id="sendBtn" onclick="handleSubmit()"
+        class="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-md hover:bg-blue-700 transition-all text-sm sm:text-base">Send</button>
+      
+      <button id="stopBtn" onclick="stopTyping()"
+        class="hidden bg-red-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-md hover:bg-red-700 transition-all text-sm sm:text-base">Stop</button>
+    </div>
+
+    <!-- Footer Developer Credit -->
+    <p class="text-center text-xs text-gray-400 mt-3">
+      AiChat developed by 
+      <a href="https://rakibalom.com/" target="_blank" class="text-blue-500 hover:underline">Rakib Alom</a>
+    </p>
   </div>
 
-  <!-- Footer text with link -->
-  <div class="mt-4 text-center text-sm text-gray-600">
-    AiChat developed by <a href="https://rakibalom.com/" target="_blank" class="text-blue-600 hover:underline">Rakib Alom</a>
-  </div>
-
+  <!-- Scripts -->
   <script src="keyworddb.js"></script>
   <script src="script.js"></script>
 </body>
