@@ -1,0 +1,13 @@
+.typing {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 0.8s infinite step-end;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+#chatBox {
+  white-space: pre-wrap;
+}

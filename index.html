@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AiChat by Rakib Alom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 h-screen flex flex-col justify-center items-center p-4">
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg p-6" style="height: 80vh;">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-semibold">Smart AI Chat</h2>
+      <button onclick="clearChat()" class="text-sm bg-red-500 text-white px-3 py-1 rounded-xl hover:bg-red-600">Clear Chat</button>
+    </div>
+    <!-- Adjusted height of the chat box -->
+    <div id="chatBox" class="overflow-y-auto space-y-4 mb-4" style="height: 63vh;"></div>
+    <div class="flex gap-2">
+      <input id="userInput" type="text" placeholder="Ask something..." class="flex-1 px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" onkeydown="if(event.key==='Enter') handleSubmit()" />
+      <button id="sendBtn" onclick="handleSubmit()" class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Send</button>
+      <button id="stopBtn" onclick="stopTyping()" class="hidden bg-red-600 text-white px-6 py-2 rounded-xl hover:bg-red-700">Stop</button>
+    </div>
+  </div>
+
+  <!-- Footer text with link -->
+  <div class="mt-4 text-center text-sm text-gray-600">
+    AiChat developed by <a href="https://rakibalom.com/" target="_blank" class="text-blue-600 hover:underline">Rakib Alom</a>
+  </div>
+
+  <script src="keyworddb.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
