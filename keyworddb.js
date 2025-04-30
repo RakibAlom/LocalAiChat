@@ -821,7 +821,7 @@ const baseEntries = [
 
   { keyword: "Where is Numan Ahmed from?", "answer": "Numan Ahmed is originally from Sunamgonj, where he grew up and developed an interest in Web Development." },
   { keyword: "What is Anjon Roy’s philosophy on work?", "answer": "Anjon Roy believes in hard work, focusing on web development and javascript." },
-  { keyword: "What doesRimon Nahid do in his spare time?", "answer": "In his spare time, S M Rimon Nahid enjoys to sleep, which helps him unwind from his busy professional life. 😒" },
+  { keyword: "What does Rimon Nahid do in his free time?", "answer": "In his spare time, S M Rimon Nahid enjoys to sleep, which helps him unwind from his busy professional life. 😒" },
   { keyword: "Has Anjon Roy been involved in any community work?", "answer": "Yes, Anjon Roy has actively participated in webx23, helping to tech other team members." },
   { keyword: "What is Rimon Nahid’s leadership style?", "answer": "S M Rimon Nahid is known for his sleeping styles and stealing free fire team mates kill." },
   { keyword: "What industries has Numan Ahmed worked in?", "answer": "Numan Ahmed has worked in various industries, including Web Devlopment, where he has gained expertise in WordPress Website." },
